@@ -6,8 +6,32 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="css/reset.css" />
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/styles.css" />
 		<script defer src="js/script.js"></script>
 	</head>
-	<body></body>
+	<body>
+		<section class="start">
+			<div>
+				<h1>Welcome to Tomogotchi World</h1>
+				<!-- ToDo: Add menu with difficult selection. -->
+				<h2>
+					Keep your pet alive by maintaining hunger, boredom, and sleepiness
+					under 20.
+				</h2>
+				<button id="buttonStart">Start</button>
+			</div>
+		</section>
+		<div class="game hidden">
+			<section class="stats">
+				<h2>Stats</h2>
+			</section>
+			<section class="main"></section>
+			<section class="contollers">
+				<h2>Controls</h2>
+			</section>
+		</div>
+		<div class="endGame hidden">
+			<h2>Game over...</h2>
+		</div>
+	</body>
 </html>
