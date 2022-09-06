@@ -12,7 +12,8 @@ h2 {
 	padding: 10px;
 }
 
-.start, .end {
+.start,
+.end {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -61,6 +62,15 @@ h2 {
 #buttonStart:focus {
 	background-color: #f082ac;
 }
+
+.game {
+	display: flex;
+	flex-direction: row;
+}
+.main {
+	width: 50%;
+}
+
 .hidden {
 	display: none;
 }
