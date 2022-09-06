@@ -7,6 +7,10 @@ const SPEED_SLEEP = 4 * 1000;
 /*----- app's state (variables) -----*/
 let gameState;
 const pet = new Object();
+let idIntervalAge;
+let idIntervalHunger;
+let idIntervalBoredom;
+let idIntervalSleep;
 /*----- cached element references -----*/
 body = document.querySelector('body');
 sectionStart = document.querySelector('.js-section-start');
@@ -47,6 +51,10 @@ function init() {
 	pet.hunger = 0;
 	pet.boredom = 0;
 	pet.sleep = 0;
+	idIntervalAge = setInterval(increaseAge, SPEED_AGE, pet);
+	idIntervalHunger = setInterval(increaseHunger, SPEED_HUNGER, pet);
+	idIntervalBoredom = setInterval(increaseBoredom, SPEED_BOREDOM, pet);
+	idIntervalSleep = setInterval(increaseSleep, SPEED_SLEEP, pet);
 	render();
 }
 
@@ -64,11 +72,12 @@ function render() {
 		setHidden(sectionStart);
 		setHidden(sectionGame);
 		removeHidden(sectionEnd);
+		stopIntervals();
 	}
 	statAge.innerText = `Age: ${pet.age}`;
-	statHunger.innerText = `Age: ${pet.hunger}`;
-	statBoredom.innerText = `Age: ${pet.boredom}`;
-	statSleep.innerText = `Age: ${pet.sleep}`;
+	statHunger.innerText = `Hunger: ${pet.hunger}`;
+	statBoredom.innerText = `Boredom: ${pet.boredom}`;
+	statSleep.innerText = `Sleep: ${pet.sleep}`;
 }
 
 function toggleHidden(target) {
@@ -118,4 +127,10 @@ function checkDifficult(obj) {
 	if (obj.sleep >= DIFFICULT) {
 		gameState = 2;
 	}
+}
+function stopIntervals() {
+	clearInterval(idIntervalAge);
+	clearInterval(idIntervalHunger);
+	clearInterval(idIntervalBoredom);
+	clearInterval(idIntervalSleep);
 }
