@@ -7,17 +7,21 @@ sectionStart = document.querySelector('.js-section-start');
 sectionGame = document.querySelector('.js-section-game');
 sectionEnd = document.querySelector('.js-section-end');
 buttonStart = document.querySelector('#buttonStart');
+buttonPlayAgain = document.querySelector('#buttonPlayAgain');
 body = document.querySelector('body');
 /*----- event listeners -----*/
 body.addEventListener('click', function (e) {
-	console.log(e.target);
-	if ((e.target = buttonStart)) {
+	if (e.target === buttonStart) {
+		gameState = 1;
 		init();
+	}
+	if (e.target === buttonPlayAgain) {
+		gameState = 0;
+		render();
 	}
 });
 /*----- functions -----*/
 function init() {
-	gameState = 1;
 	render();
 }
 

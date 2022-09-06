@@ -12,14 +12,15 @@ h2 {
 	padding: 10px;
 }
 
-.start {
+.start, .end {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 }
-.start > div {
+.start > div,
+.end > div {
 	border: 3px solid white;
 	border-radius: 25px;
 	display: flex;
